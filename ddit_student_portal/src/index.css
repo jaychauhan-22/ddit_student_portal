@@ -16,7 +16,15 @@ body {
 .btn-outline:hover{
   background-color: #F55734;
   color: white;
-
+}
+.btn-fill{
+  background-color: #F55734;
+  color:white;
+  transition: all 0.25s;
+}
+.btn-fill:hover{
+  background-color: #e43d18;
+  color: white;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

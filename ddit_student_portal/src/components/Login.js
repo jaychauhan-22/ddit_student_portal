@@ -41,7 +41,7 @@ const Login = () => {
                                 </div>
                                 <br />
                                 <div className='d-grid gap-2'>
-                                    <button type="submit" className="btn btn-outline btn-lg">Sign in</button>
+                                    <button type="submit" className="btn btn-fill btn-lg">Sign in</button>
                                 </div>
 
                             </form>
