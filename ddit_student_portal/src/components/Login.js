@@ -1,10 +1,37 @@
 import React,{useState} from 'react';
-
+import { useNavigate } from "react-router-dom";
 const Login = () => {
+    
     const [statusError,setStatusError] = useState("");
     const [username,setUsername] = useState("");
     const [password,setPassword] = useState("");
+
+    let navigate = useNavigate();
     const  handleSubmit = (e)=>{
+         e.preventDefault();
+        fetch("https://localhost:44339/Login", {
+            method: "POST",
+            crossDomain: true,
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+                "Access-Control-Allow-Origin": "*",
+            },
+            body: JSON.stringify({
+                "StudentCode":username,
+                "BirthDate":password,
+            }),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                if(data.status!==400){
+                    localStorage.setItem("studentid", data.studentCode);
+                    navigate("/home");
+                }
+                else
+                    setStatusError("Invalid Username or Password");
+            });
 
     }
     return (
@@ -14,7 +41,7 @@ const Login = () => {
                     <div className="row d-flex align-items-center justify-content-center h-100">
                         <div className="col-md-8 col-lg-7 col-xl-6">
                             <img src="ddu.png" width="200%"  
-                                className="img-fluid" alt="Phone image" />
+                                className="img-fluid" alt="Logo" />
                         </div>
                         
                         <div className="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
@@ -43,7 +70,6 @@ const Login = () => {
                                 <div className='d-grid gap-2'>
                                     <button type="submit" className="btn btn-fill btn-lg">Sign in</button>
                                 </div>
-
                             </form>
                         </div>
                     </div>
