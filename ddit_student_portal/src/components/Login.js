@@ -27,6 +27,7 @@ const Login = () => {
                 console.log(data);
                 if(data.status!==400){
                     localStorage.setItem("studentid", data.studentCode);
+                    localStorage.setItem("studenttoken", data.studentId);
                     navigate("/home");
                 }
                 else
