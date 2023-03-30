@@ -36,12 +36,9 @@ const Navbar = () => {
                                 </a>
                                 <ul className="dropdown-menu text-dark" aria-labelledby="navbarDropdown">
                                     <li><Link to={"/home"} className={"nav-link text-dark"}>Program Info</Link></li>
-                                    <li><Link to={"/home"} className={"nav-link text-dark"}>Search Subjects</Link></li>
+                                    <li><Link to={"/info-searchsubjects"} className={"nav-link text-dark"}>Search Subjects</Link></li>
                                     <li><Link to={"/info-mysubjects"} className={"nav-link active text-dark"}>My Subjects</Link></li>
                                 </ul>
-                            </li>
-                            <li className="nav-item">
-                            <Link to={"/home"} className={"nav-link "}>Moodle</Link>
                             </li>
                             <li className="nav-item">
                             <button type="button" className="btn btn-link nav-link" onClick={(e)=>{

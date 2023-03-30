@@ -28,6 +28,7 @@ const Login = () => {
                 if(data.status!==400){
                     localStorage.setItem("studentid", data.studentCode);
                     localStorage.setItem("studenttoken", data.studentId);
+                    localStorage.setItem("student", JSON.stringify(data));
                     navigate("/home");
                 }
                 else
