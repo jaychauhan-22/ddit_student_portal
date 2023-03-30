@@ -7,6 +7,7 @@ import Fees from './components/Fees';
 import ExamResult from './components/ExamResult';
 import InformationMySubjects from './components/Information_MySubjects';
 import SearchSubject from './components/SearchSubject';
+import InternalResult from './components/InternalResult';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/examresults' element={<ExamResult/>}/>
         <Route path='/info-mysubjects' element={<InformationMySubjects/>}/>
         <Route path='/info-searchsubjects' element={<SearchSubject/>}/>
+        <Route path='/examresults/internal-result' element={<InternalResult/>}/>
 
         <Route path='/' element={<Login/>}/>
       </Routes>

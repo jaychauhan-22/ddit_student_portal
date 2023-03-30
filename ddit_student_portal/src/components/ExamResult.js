@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Navbar from './static_components/Navbar';
 
 const ExamResult = () => {
@@ -20,7 +20,7 @@ const ExamResult = () => {
     }, []);
     const loadData = () => {
         const temp = localStorage.getItem('studenttoken');
-        fetch(`https://localhost:44339/api/Fees/${temp}`, {
+        fetch(`https://localhost:44339/api/Sessions`, {
             method: "GET",
             crossDomain: true,
             headers: {
@@ -31,7 +31,7 @@ const ExamResult = () => {
         })
             .then((res) => res.json())
             .then((data) => {
-                // console.log(data);
+                console.log(data);
                 setStudentFeesDetails(data);
                 // console.log(studentfees);
                 if (data.status == 400) {
@@ -64,23 +64,23 @@ const ExamResult = () => {
                     <tbody>
                         {/* {console.log(studentfees)} */}
                         {studentfees && studentfees.length > 0 && Array.isArray(studentfees) ? (
-                            
-                            studentfees.reverse().map((item) => {
+
+                            studentfees.map((item) => {
                                 return (
                                     <tr>
-                                        <td>{item.txndate}</td>
-                                        <td>{item.vouchernumber}</td>
-                                        <td>{item.batchyear}</td>
-                                        <td>{item.sessionnumber}</td>
-                                        <td>{item.admissiontype}</td>
-                                        <td>{item.feesamount}</td>
-                                        <td>{item.txnstatus}</td>
-                                        <td>{item.paymode}</td>
-                                        <td>{item.chequedate}</td>
-                                        <td>{item.bankbranch}</td>
-                                        <td>{item.paiddate}</td>
-                                        <td>{item.reconsiledate}</td>
-                                        <td>{item.reconsiledate2}</td>
+                                        <td>
+                                            <Link to="/examresults/external-result" sessioninfo={item.batchYear} className="link-primary">External Result</Link>
+                                        </td>
+                                        <td>
+                                            <Link to="/examresults/internal-result" state={item} className="link-primary">Internal Result</Link>
+                                        </td>
+                                        <td>{item.batchYear}</td>
+                                        <td>{item.sessionNo}</td>
+                                        <td>{item.regExamNo}</td>
+                                        <td>{item.rem1ExamNo}</td>
+                                        <td>{item.rem2ExamNo}</td>
+                                        <td>{item.provisionalMarksheet}</td>
+
                                     </tr>
                                 );
                             })
