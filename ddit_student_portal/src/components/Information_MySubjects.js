@@ -76,7 +76,7 @@ const InformationMySubjects = () => {
                             <th scope="col">Tw Total</th>
                             <th scope="col">Total Min Marks</th>
                             <th scope="col">Total Marks</th>
-                            <th scope="col">Sylllabus</th>
+                            <th scope="col">Syllabus</th>
                             
 
                         </tr>
@@ -98,7 +98,7 @@ const InformationMySubjects = () => {
                                         <td>{item.credit}</td>
                                         <td>{item.thMinPass1}</td>
                                         <td>{item.thMinPass2}</td>
-                                        <td>{item.thMinPotal}</td>
+                                        <td>{item.thTotal}</td>
                                         <td>{item.sessMinPass1}</td>
                                         <td>{item.sessMinPass2}</td>
                                         <td>{item.sessTotal}</td>

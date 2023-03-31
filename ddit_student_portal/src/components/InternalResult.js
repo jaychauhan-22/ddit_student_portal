@@ -8,6 +8,7 @@ const InternalResult = (props) => {
     const sessioninfo = location.state;
     console.log(sessioninfo);
     const [studenttoken, setStudentToken] = useState("");
+    const [lecturecount, setLecturesCount] = useState();
     const [studentfees, setStudentFeesDetails] = useState([]);
     let navigate = useNavigate();
 
@@ -51,16 +52,16 @@ const InternalResult = (props) => {
         <div>
             <Navbar />
             <p className='text-center h6 my-4'>
-                    <strong className='mx-2'>Degree: {studenttoken.degree}</strong>
-                    <strong className='mx-2'>ID No: {String(studenttoken.studentCode).toUpperCase()}</strong>
-                    <strong className='mx-2'>ID No: {String(studenttoken.fullName).toUpperCase()}</strong><br/>
-                    <strong className='mx-2'>Batch No: {sessioninfo.batchYear}</strong>
-                    <strong className='mx-2'>Session No: {sessioninfo.sessionNo}</strong><br/>
-                    <strong className='mx-2'>Attempt Type: Internal</strong>
-                    <strong className='mx-2'>Exam No: {sessioninfo.regExamNo}</strong><br/>
-                </p>
+                <strong className='mx-2'>Degree: {studenttoken.degree}</strong>
+                <strong className='mx-2'>ID No: {String(studenttoken.studentCode).toUpperCase()}</strong>
+                <strong className='mx-2'>Name: {String(studenttoken.fullName).toUpperCase()}</strong><br />
+                <strong className='mx-2'>Batch Year: {sessioninfo.batchYear}</strong>
+                <strong className='mx-2'>Session No: {sessioninfo.sessionNo}</strong><br />
+                <strong className='mx-2'>Attempt Type: Internal</strong>
+                <strong className='mx-2'>Exam No: {sessioninfo.regExamNo}</strong><br />
+            </p>
             <div className='table-responsive'>
-                
+
                 <table className="table table-striped table-hover container table-responsive">
                     <thead>
                         <tr className='table-primary'>
@@ -97,7 +98,7 @@ const InternalResult = (props) => {
                             studentfees.map((item) => {
                                 return (
                                     <tr>
-                                        
+
                                         <td>{item.subjectcode}</td>
                                         <td>{item.subjectname}</td>
                                         <td>{item.sess1Att}</td>
@@ -109,20 +110,20 @@ const InternalResult = (props) => {
 
                                         <td>{item.sess2marks}</td>
                                         <td>{item.sess2Att}</td>
-                                        <td>{item.lectureAtt1}</td>
+                                        <td>{item.lectureAtt2}</td>
                                         <td>{item.lectureAtt2OutOf}</td>
                                         <td>{item.prAtt2}</td>
                                         <td>{item.prAtt2OutOf}</td>
 
                                         <td>{item.sess3marks}</td>
                                         <td>{item.sess3Att}</td>
-                                        <td>{item.lectureAtt1}</td>
+                                        <td>{item.lectureAtt3}</td>
                                         <td>{item.lectureAtt3OutOf}</td>
                                         <td>{item.prAtt3}</td>
                                         <td>{item.prAtt3OutOf}</td>
-                                        <td>{item.blockAtt!=false && "--"}</td>
+                                        <td>{item.blockAtt != false && "--"}</td>
                                         <td>{
-                                        item.blockMarks==0 && "--"
+                                            item.blockMarks == 0 && "--"
                                         }</td>
 
                                     </tr>
@@ -131,13 +132,6 @@ const InternalResult = (props) => {
                         ) : (
                             <p className="text-muted">No Details Found..</p>
                         )}
-                        {studentfees.map(function (i, item) {
-                            <tr>
-                                <th scope="row">{i}</th>
-                                <td>{item}</td>
-                            </tr>
-
-                        })}
 
 
                     </tbody>

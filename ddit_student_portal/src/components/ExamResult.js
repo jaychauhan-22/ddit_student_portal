@@ -69,7 +69,7 @@ const ExamResult = () => {
                                 return (
                                     <tr>
                                         <td>
-                                            <Link to="/examresults/external-result" sessioninfo={item.batchYear} className="link-primary">External Result</Link>
+                                            <Link to="/examresults/external-result" state={item} className="link-primary">External Result</Link>
                                         </td>
                                         <td>
                                             <Link to="/examresults/internal-result" state={item} className="link-primary">Internal Result</Link>
