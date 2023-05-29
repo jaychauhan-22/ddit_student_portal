@@ -18,16 +18,16 @@ const AdminNavbar = () => {
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li className="nav-item">
 
-                                    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-                                        <ul class="navbar-nav">
-                                            <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href='#' aria-expanded="false">
+                                    <div className="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                                        <ul className="navbar-nav">
+                                            <li className="nav-item dropdown">
+                                                <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href='#' aria-expanded="false">
                                                     Student Info
                                                 </a>
-                                                <ul class="dropdown-menu">
-                                                    <li><Link class="dropdown-item" to={"/admin/students/add"}>Add Student</Link></li>
-                                                    <li><Link class="dropdown-item" to={"/admin/students/update"}>Update Student</Link></li>
-                                                    <li><Link class="dropdown-item" to={"/admin/students/delete"}>Delete Student</Link></li>
+                                                <ul className="dropdown-menu">
+                                                    <li><Link className="dropdown-item" to={"/admin/students/add"}>Add Student</Link></li>
+                                                    <li><Link className="dropdown-item" to={"/admin/students/update"}>Update/Delete Student</Link></li>
+                                                    {/* <li><Link className="dropdown-item" to={"/admin/students/delete"}>Delete Student</Link></li> */}
                                                 </ul>
                                             </li>
                                         </ul>
@@ -37,18 +37,18 @@ const AdminNavbar = () => {
                                     </Link> */}
                                 </li>
                                 <li className="nav-item">
-                                    <Link to={"/fees"} className={"nav-link"}>Subject Details</Link>
+                                    {/* <Link to={"/fees"} className={"nav-link"}>Subject Details</Link> */}
                                 </li>
                                 <li className="nav-item">
-                                    <Link to={"/examresults"} className={"nav-link"}>Exam Results</Link>
+                                    {/* <Link to={"/examresults"} className={"nav-link"}>Exam Results</Link> */}
                                 </li>
                                 <li className="nav-item">
                                     {/* <Link to={"/home"} className={"nav-link"}>Hall Ticket</Link> */}
                                 </li>
                                 <li className="nav-item dropdown">
-                                    <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    {/* <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         Information
-                                    </a>
+                                    </a> */}
                                     <ul className="dropdown-menu text-dark" aria-labelledby="navbarDropdown">
 
                                         <li><Link to={"/info-searchsubjects"} className={"nav-link text-dark"}>Search Subjects</Link></li>
@@ -57,7 +57,9 @@ const AdminNavbar = () => {
                                 </li>
                                 <li className="nav-item">
                                     <button type="button" className="btn btn-link nav-link" onClick={(e) => {
+                                        localStorage.removeItem("admin");
                                         localStorage.removeItem("studentid");
+                                        localStorage.removeItem("student");
                                         navigate("/admin-login");
                                     }} >Logout(Admin)</button>
                                 </li>

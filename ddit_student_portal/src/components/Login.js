@@ -26,6 +26,7 @@ const Login = () => {
             .then((data) => {
                 console.log(data);
                 if(data.status!==400){
+                    console.log(data);
                     localStorage.setItem("studentid", data.studentCode);
                     localStorage.setItem("studenttoken", data.studentId);
                     localStorage.setItem("student", JSON.stringify(data));

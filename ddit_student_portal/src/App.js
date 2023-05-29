@@ -12,6 +12,8 @@ import ExternalResult from './components/ExternalResult';
 import AdminLogin from './components/admincomponents/admin-login';
 import AdminHome from './components/admincomponents/admin-home';
 import AdminStudentinfo from './components/admincomponents/admin-studentinfo';
+import AdminStudentsAdd from './components/admincomponents/admin-students-add';
+import AdminStudentsUpdate from './components/admincomponents/admin-students-update';
 
 function App() {
   return (
@@ -30,6 +32,8 @@ function App() {
         <Route path='/admin-home' element={<AdminHome/>}/>
         <Route path='/admin-login' element={<AdminLogin/>}/>
         <Route path='/admin-studentinfo' element={<AdminStudentinfo/>}/>
+        <Route path='/admin/students/add' element={<AdminStudentsAdd/>}/>
+        <Route path='/admin/students/update' element={<AdminStudentsUpdate/>}/>
       </Routes>
       </BrowserRouter>
     </div>

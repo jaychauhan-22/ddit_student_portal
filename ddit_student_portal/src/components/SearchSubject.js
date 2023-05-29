@@ -37,7 +37,7 @@ const SearchSubject = () => {
                 console.log(data);
                 setMySubjects(data);
                 // console.log(studentfees);
-                if (data.length == 0) {
+                if (data.length == 0 || data.status==404) {
                     // navigate("/");
                     setStatusError("No Result Found..");
                 }
@@ -131,7 +131,7 @@ const SearchSubject = () => {
                                         <td>{item.credit}</td>
                                         <td>{item.thMinPass1}</td>
                                         <td>{item.thMinPass2}</td>
-                                        <td>{item.thMinPotal}</td>
+                                        <td>{item.thTotal}</td>
                                         <td>{item.sessMinPass1}</td>
                                         <td>{item.sessMinPass2}</td>
                                         <td>{item.sessTotal}</td>

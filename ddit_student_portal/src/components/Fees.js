@@ -68,7 +68,7 @@ const Fees = () => {
                     </thead>
                     <tbody>
                         {/* {console.log(studentfees)} */}
-                        {studentfees && studentfees.length > 0 && Array.isArray(studentfees) ? (
+                        {Array.isArray(studentfees) && studentfees && studentfees.length > 0  ? (
                             
                             studentfees.reverse().map((item) => {
                                 return (
@@ -92,13 +92,6 @@ const Fees = () => {
                         ) : (
                             <p className="text-muted">No Details Found..</p>
                         )}
-                        {studentfees.map(function (i, item) {
-                            <tr>
-                                <th scope="row">{i}</th>
-                                <td>{item}</td>
-                            </tr>
-
-                        })}
 
 
                     </tbody>

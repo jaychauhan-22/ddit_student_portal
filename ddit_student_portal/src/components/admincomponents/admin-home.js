@@ -1,8 +1,13 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import AdminNavbar from '../static_components/Admin-Navbar';
 const AdminHome = () => {
     let navigate = useNavigate();
+    useEffect(() => {
+      if(!localStorage.getItem("admin"))
+        navigate("/admin-login");
+
+    }, []);
     return (
         <div>
             <AdminNavbar/>

@@ -8,7 +8,6 @@ const Home = () => {
 
     useEffect(() => {
         const temp = localStorage.getItem('studentid');
-        
         setStudenId(temp);
         if (!temp) {
             navigate("/");
@@ -18,7 +17,11 @@ const Home = () => {
         }
     }, []);
     const loadData = () => {
-        fetch(`https://localhost:44339/api/Students/${studentid}`, {
+        
+        const temp = localStorage.getItem('studentid');
+        console.log(temp);
+        setStudenId(temp);
+        fetch(`https://localhost:44339/api/Students/${temp}`, {
             method: "GET",
             crossDomain: true,
             headers: {
@@ -30,7 +33,7 @@ const Home = () => {
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
-                setStudenData(data[0]);
+                setStudenData(data);
                 studentdata.isD2d = studentdata.isD2d + "";
                 console.log(data);
                 if (data.status !== 400) {
@@ -151,7 +154,7 @@ const Home = () => {
                         </tr>
                     </tbody>
                 </table>
-                {studentid}
+                {/* {studentid} */}
             </div>
         </div>
     );

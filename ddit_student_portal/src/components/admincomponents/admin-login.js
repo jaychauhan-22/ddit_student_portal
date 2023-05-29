@@ -9,8 +9,10 @@ const AdminLogin = () => {
     let navigate = useNavigate();
     const  handleSubmit = (e)=>{
          e.preventDefault();
-        if(password=="123" && username=="admin")
+        if(password=="123" && username=="admin"){
+            localStorage.setItem("admin","admin");
             navigate("/admin-home");
+        }
         else
             setStatusError("Incorrect Username or Password");
     }

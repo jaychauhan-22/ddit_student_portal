@@ -175,7 +175,7 @@ const ExternalResult = () => {
                                                 <td>{item.subjectcode}</td>
                                                 <td>{item.subjectname}</td>
                                                 {/* {item.finalAtt="F"} */}
-                                                <td>{item.finalAtt == "P" && "PASS"} {item.finalAtt == "F" && "FAIL"}</td>
+                                                <td>{item.finalAtt}{item.finalAtt == "P" && "PASS"} {item.finalAtt == "F" && "FAIL"}</td>
                                                 <td>{item.sess1Att == "P" && item.sess2Att == "P" && item.sess3Att == "P" && ("PASS")} {(item.sess1Att == "F" || item.sess2Att == "F" || item.sess3Att == "F") && ("FAIL")}</td>
                                                 <td>{item.practicalAtt == "P" && "PASS"} {item.practicalAtt == "F" && "FAIL"}</td>
                                                 <td>{item.termworkAtt == "P" && "PASS"} {item.termworkAtt == "F" && "FAIL"}</td>
